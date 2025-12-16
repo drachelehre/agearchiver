@@ -7,6 +7,14 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QLabel, QLineEdit, QPushButt
 
 
 def archive_files(folder, days, parent):
+    """
+    Searches a folder for files past a threshold, in days. The places them in a zipped folders
+
+    :param folder:
+    :param days:
+    :param parent:
+    :return: none
+    """
     cutoff_date = datetime.now() - timedelta(days=days)
     archived = 0
 
@@ -35,6 +43,8 @@ def archive_files(folder, days, parent):
         "Done",
         f"Archived {archived} files older than {days} days"
     )
+
+
 def main():
     app = QApplication(sys.argv)
 
@@ -62,11 +72,19 @@ def main():
     layout.addWidget(archive_button, 2, 0)
 
     def browse():
+        """
+        opens a dialogue window that allows for searching for target folder
+        :return: None
+        """
         folder = QFileDialog.getExistingDirectory(window, "Select folder")
         if folder:
             folder_edit.setText(folder)
 
     def archive():
+        """
+        Takes input from text boxes in main window and archives folders based off of them
+        :return: None
+        """
         folder = folder_edit.text().strip()
         days_text = days_edit.text().strip()
 
@@ -84,7 +102,6 @@ def main():
 
     window.show()
     sys.exit(app.exec())
-
 
 
 # Press the green button in the gutter to run the script.
