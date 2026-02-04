@@ -11,6 +11,7 @@ def archive_files(folder, days, parent):
     """
     Searches a folder for files past a threshold (in days)
     and archives them into a zip file placed in the same directory.
+    Update: Includes calendar and progress bar.
     """
     cutoff_date = datetime.now() - timedelta(days=days)
     archived = 0

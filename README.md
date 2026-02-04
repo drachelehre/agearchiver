@@ -2,7 +2,7 @@
 
 ---
  This app is made to help with the clutter by scanning a folder you designate for
- files older than a time range you designate. It then places the files in a zipped folder to save on space.
+ files older than a date you designate. It then places the files in a zipped folder to save on space.
 ---
 #### Installation and setup:
 Clone
@@ -20,10 +20,10 @@ python3 -m venv venv
 source venv/bin/activate 
 ```
 
-For Windows:
+For Windows PowerShell:
 ```commandline
 python -m venv venv
-.venv\Scripts\activate.bat
+.venv\Scripts\activate.ps1
 ```
 
 Once the virtual environment is active, install PyQt6:
